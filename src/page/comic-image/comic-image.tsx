@@ -1,11 +1,17 @@
 import './comic-image.scss'
 
-export function ComicImage() {
+interface ComicImageProps {
+  id: number
+  image: string
+  alt: string
+}
+
+export function ComicImage({ id, image, alt }: ComicImageProps) {
   return (
-    <article className="content-image">
-      <div className="circle-id-image">1</div>
-      <figure>
-        <img alt="" src="https://picsum.photos/200" />
+    <article className="image">
+      <div className="image__circle">{id}</div>
+      <figure className="image__content">
+        <img alt={alt} className="image__img" src={image} />
       </figure>
     </article>
   )
