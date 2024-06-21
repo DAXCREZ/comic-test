@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 import { getComic } from '../../services/get-comic'
 import { ComicImage } from '../comic-image/comic-image'
-import { ComicDescription } from '../comit-description/comic-description'
+import { ComicNav } from '../comit-description/comic-nav'
 
 import './comic.scss'
 import { getRandomNumber } from '../../util/get-random-number'
@@ -16,6 +16,8 @@ export function Comic() {
   const handleGetComic = async () => {
     const id = idComic.toString()
     const response = await getComic(id)
+
+    console.log(response)
 
     setComicState(response)
   }
@@ -31,8 +33,8 @@ export function Comic() {
   return (
     <main className="container">
       <section className="container__section">
-        <ComicImage alt={comicState.alt} id={comicState.num} image={comicState.img} />
-        <ComicDescription description={comicState.transcript} handleChangeComic={handleGetRandomComic} title={comicState.safe_title} />
+        <ComicNav handleChangeComic={handleGetRandomComic} id={comicState.num} title={comicState.safe_title} />
+        <ComicImage alt={comicState.alt} image={comicState.img} />
       </section>
     </main>
   )

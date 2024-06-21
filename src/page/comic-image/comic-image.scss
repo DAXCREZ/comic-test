@@ -1,41 +1,15 @@
-.image{
+.container__image{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin: 0 auto;
+  max-width: calc(100% - 50px);
   height: 100%;
-
-  &__circle{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    background: #edebe9;
-    border: 2px solid #292b2b;
-    
-  }
-
-  &__content{
-    width: 500px;
-    height: 500px;
-
-    @media screen and (max-width: 767px){
-      width: 200px;
-      height: 200px;
-    }
-
-    @media screen and (max-width: 1400px){
-      width: 300px;
-      height: 300px;
-    }
-  }
+  padding: 20px 0;
 
   &__img{
-    height: 100%;
     width: 100%;
-    aspect-ratio: 1/1;
-    object-fit: contain;
+    height: 100%;
+     object-fit: contain;
+     margin: 0 auto;
   }
 
 }

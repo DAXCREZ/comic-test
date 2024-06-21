@@ -1,3 +1,5 @@
+import { StarIcon } from '../../assets/star'
+
 interface StartProps {
   onClick: () => void
   color: boolean
@@ -5,8 +7,8 @@ interface StartProps {
 
 export function Start({ onClick, color }: StartProps) {
   return (
-    <div style={{ color: color ? '#1c2225' : 'white', fontSize: '100px', border: 'none', cursor: 'pointer' }} onClick={onClick}>
-      ★
+    <div onClick={onClick}>
+      <StarIcon fill={color ? '#1c2225' : 'white'} fontWeight={5} height={50} stroke={color ? 'white' : '#1c2225'} style={{ border: color ? 'white' : '#1c2225', cursor: 'pointer' }} width={50} />
     </div>
   )
 }

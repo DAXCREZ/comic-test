@@ -1,0 +1,15 @@
+.button__comic {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  padding: 4px 10px;
+  font-family: "Comic Sans MS", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button__comic:hover {
+  background-color: rgb(0, 0, 0, 0.3);
+}

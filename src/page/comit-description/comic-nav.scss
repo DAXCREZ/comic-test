@@ -1,0 +1,37 @@
+.nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  &__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__info{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &__title {
+    font-size: 3rem;
+  }
+
+   &__id{
+   font-size: 3rem;
+   font-bold: 700;
+  }
+  &__content {
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+
+  &__actions{
+    display: flex;
+    gap: 10px;
+  }
+
+}

@@ -1,11 +1,8 @@
 .container {
   display: flex;
-  align-items: center;
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  margin: 0 auto;
-  padding: 40px 0;
   background-image: url('../../assets/fondo.png');
   background-size: cover;
   background-position: center;
@@ -13,18 +10,10 @@
 
   
   &__section{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 75%;
     height: 100%;
-    padding: 50px;
-    gap: 100px;
-    place-content: center;
-
-    @media screen and (max-width: 1400px){
-      grid-template-columns: 1fr;
-      padding: 20px;
-      
-    }
   }
 }
