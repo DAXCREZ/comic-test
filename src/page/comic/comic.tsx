@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react'
 import { getComic } from '../../services/get-comic'
 import { ComicImage } from '../comic-image/comic-image'
 import { ComicNav } from '../comit-nav/comic-nav'
-
 import './comic.scss'
 import { getRandomNumber } from '../../util/get-random-number'
 import { Button } from '../../components/button/Button'
