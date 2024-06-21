@@ -1,4 +1,5 @@
 import { StarIcon } from '../../assets/star'
+import './star.scss'
 
 interface StartProps {
   onClick: () => void
@@ -8,7 +9,7 @@ interface StartProps {
 export function Start({ onClick, color }: StartProps) {
   return (
     <div onClick={onClick}>
-      <StarIcon fill={color ? '#1c2225' : 'white'} fontWeight={5} height={50} stroke={color ? 'white' : '#1c2225'} style={{ border: color ? 'white' : '#1c2225', cursor: 'pointer' }} width={50} />
+      <StarIcon className="container__star" fill={color ? '#1c2225' : 'white'} stroke={color ? 'white' : '#1c2225'} style={{ border: color ? 'white' : '#1c2225' }} />
     </div>
   )
 }

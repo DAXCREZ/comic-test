@@ -1,9 +1,8 @@
 .container__image{
   display: flex;
   margin: 0 auto;
-  max-width: calc(100% - 50px);
   height: 100%;
-  padding: 20px 0;
+  padding: 20px;
 
   &__img{
     width: 100%;
