@@ -9,10 +9,12 @@ interface ComicNavProps {
   title: string
   rating: number
   setRating: Dispatch<SetStateAction<number>>
-  handleChangeComic: () => void
+  handleGetRandomComic: () => void
+  handleGetPreviousComic: () => void
+  handleGetNextComic: () => void
 }
 
-export function ComicNav({ id, title, rating, setRating, handleChangeComic }: ComicNavProps) {
+export function ComicNav({ id, title, rating, setRating, handleGetRandomComic, handleGetNextComic, handleGetPreviousComic }: ComicNavProps) {
   return (
     <nav className="nav">
       <div className="nav__header">
@@ -24,9 +26,9 @@ export function ComicNav({ id, title, rating, setRating, handleChangeComic }: Co
           </div>
         </div>
         <div className="nav__actions nav__action--disable">
-          <Button title="<" onClick={handleChangeComic} />
-          <Button title="?" onClick={handleChangeComic} />
-          <Button title=">" onClick={handleChangeComic} />
+          <Button title="<" onClick={handleGetPreviousComic} />
+          <Button title="?" onClick={handleGetRandomComic} />
+          <Button title=">" onClick={handleGetNextComic} />
         </div>
       </div>
     </nav>

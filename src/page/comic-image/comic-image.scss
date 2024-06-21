@@ -1,9 +1,15 @@
 .container__image{
   display: flex;
-  margin: 0 auto;
   height: 100%;
+  width: 100%;
   padding: 20px;
+  margin: 82px auto 0 auto;
 
+  @media screen and (min-width: 1024px){
+     max-width: 70%;
+     max-height: calc(100% - 82px);
+  }
+  
   &__img{
     width: 100%;
     height: 100%;

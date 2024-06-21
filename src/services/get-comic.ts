@@ -16,13 +16,6 @@ export const getComic = async (id: string) => {
   const response = await fetch(`${PROXY_URL}${AP_COMIC(id)}`)
 
   const data = (await response.json()) as ResponseComic
-
-  // if (data.status.http_code !== 200) {
-  //   return {
-  //     error: 'Se produjo un error al obtener el comic'
-  //   }
-  // }
-
   const dataJson = JSON.parse(data.contents) as Comic
 
   return dataJson

@@ -4,12 +4,14 @@ import './star.scss'
 interface StartProps {
   onClick: () => void
   color: boolean
+  onMouseEnter: () => void
+  onMouseLeave: () => void
 }
 
-export function Start({ onClick, color }: StartProps) {
+export function Start({ onClick, color, onMouseEnter, onMouseLeave }: StartProps) {
   return (
     <div onClick={onClick}>
-      <StarIcon className="container__star" fill={color ? '#1c2225' : 'white'} stroke={color ? 'white' : '#1c2225'} style={{ border: color ? 'white' : '#1c2225' }} />
+      <StarIcon className="container__star" fill={color ? '#1c2225' : 'white'} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} />
     </div>
   )
 }

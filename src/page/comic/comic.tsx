@@ -29,6 +29,25 @@ export function Comic() {
     setIdComic(getRandomNumber())
   }
 
+  const handleGetPreviousComic = () => {
+    const idValidate = idComic - 1
+
+    if (idValidate <= 0) {
+      return
+    }
+
+    setIdComic(idValidate)
+  }
+
+  const handleGetNextComic = () => {
+    const idValidate = idComic + 1
+
+    if (idValidate >= 2949) {
+      return
+    }
+    setIdComic(idComic + 1)
+  }
+
   useEffect(() => {
     handleGetComic()
   }, [idComic])
@@ -36,16 +55,26 @@ export function Comic() {
   return (
     <main className="container">
       <section className="container__section">
-        <ComicNav handleChangeComic={handleGetRandomComic} id={comicState.num} rating={rating} setRating={setRating} title={comicState.safe_title} />
+        <ComicNav
+          handleGetNextComic={handleGetNextComic}
+          handleGetPreviousComic={handleGetPreviousComic}
+          handleGetRandomComic={handleGetRandomComic}
+          id={comicState.num}
+          rating={rating}
+          setRating={setRating}
+          title={comicState.safe_title}
+        />
         <ComicImage alt={comicState.alt} image={comicState.img} />
-        <div className="container__actions container__action--disable">
-          <Rating rating={rating} setRating={setRating} />
-        </div>
-        <div className="container__actions container__action--disable">
-          <Button title="<" onClick={handleGetRandomComic} />
-          <Button title="?" onClick={handleGetRandomComic} />
-          <Button title=">" onClick={handleGetRandomComic} />
-        </div>
+        <footer className="container__footer container__footer--disable">
+          <div className="container__actions">
+            <Rating rating={rating} setRating={setRating} />
+          </div>
+          <div className="container__actions">
+            <Button title="<" onClick={handleGetPreviousComic} />
+            <Button title="?" onClick={handleGetRandomComic} />
+            <Button title=">" onClick={handleGetNextComic} />
+          </div>
+        </footer>
       </section>
     </main>
   )
