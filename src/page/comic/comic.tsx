@@ -9,16 +9,13 @@ import './comic.scss'
 import { getRandomNumber } from '../../util/get-random-number'
 import { Button } from '../../components/button/button'
 import { Rating } from '../../components/rating/rating'
-import { RatingContext, type RatedComic } from '../../context/comic-provider'
+import { RatingContext } from '../../context/comic-provider'
 
 export function Comic() {
   const [comicState, setComicState] = useState<Comic>({} as Comic)
   const [idComic, setIdComic] = useState<number>(getRandomNumber())
   const [rating, setRating] = useState<number>(0)
-  const { rateComic, ratings } = useContext(RatingContext) as {
-    rateComic: (id: number, rating: number) => void
-    ratings: RatedComic[]
-  }
+  const { rateComic, ratings } = useContext(RatingContext)
 
   const handleGetComic = async () => {
     const id = idComic.toString()

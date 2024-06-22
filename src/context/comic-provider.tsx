@@ -10,7 +10,12 @@ interface RatingContextProps {
   rateComic: (id: number, rating: number) => void
 }
 
-const RatingContext = createContext<RatingContextProps | null>(null)
+const initialContext: RatingContextProps = {
+  ratings: [],
+  rateComic: () => null
+}
+
+const RatingContext = createContext<RatingContextProps>(initialContext)
 
 interface RatingProviderProps {
   children: React.ReactNode
@@ -42,6 +47,8 @@ function RatingProvider({ children }: RatingProviderProps) {
 
       return updatedRatings
     })
+
+    return null
   }
 
   return <RatingContext.Provider value={{ ratings, rateComic }}>{children}</RatingContext.Provider>
