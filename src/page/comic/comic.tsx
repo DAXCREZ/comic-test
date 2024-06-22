@@ -13,7 +13,7 @@ import { RatingContext } from '../../context/comic-provider'
 
 export function Comic() {
   const [comicState, setComicState] = useState<Comic>({} as Comic)
-  const [idComic, setIdComic] = useState<number>(getRandomNumber())
+  const [idComic, setIdComic] = useState<number>(123)
   const [rating, setRating] = useState<number>(0)
   const { rateComic, ratings } = useContext(RatingContext)
 
@@ -22,13 +22,14 @@ export function Comic() {
     const [data, error] = await getComic(id)
 
     if (error) {
-      console.log(error)
+      console.error(error)
 
       return
     }
 
     if (data) {
       setComicState(data)
+      console.log(data)
       const rating = ratings.find((rating) => rating.id === data.num)
 
       setRating(rating ? rating.rating : 0)

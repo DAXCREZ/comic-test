@@ -21,7 +21,7 @@ export function Rating({ rating, setRating }: RatingProps) {
   }
 
   return (
-    <div className="rating">
+    <div className="rating" data-testid="rating-component">
       {Array.from({ length: 5 }, (_, index) => (
         <Star
           key={index}
