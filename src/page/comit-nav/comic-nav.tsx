@@ -8,13 +8,13 @@ interface ComicNavProps {
   id: number
   title: string
   rating: number
-  setRating: Dispatch<SetStateAction<number>>
   handleGetRandomComic: () => void
   handleGetPreviousComic: () => void
   handleGetNextComic: () => void
+  handleRateComic: (newRating: number) => void
 }
 
-export function ComicNav({ id, title, rating, setRating, handleGetRandomComic, handleGetNextComic, handleGetPreviousComic }: ComicNavProps) {
+export function ComicNav({ id, title, rating, handleGetRandomComic, handleGetNextComic, handleGetPreviousComic, handleRateComic }: ComicNavProps) {
   return (
     <nav className="nav">
       <div className="nav__header">
@@ -22,7 +22,7 @@ export function ComicNav({ id, title, rating, setRating, handleGetRandomComic, h
           <h1 className="nav__id"># {id}</h1>
           <h1 className="nav__title">{title}</h1>
           <div className="nav__rating__position">
-            <Rating rating={rating} setRating={setRating} />
+            <Rating rating={rating} setRating={handleRateComic} />
           </div>
         </div>
         <div className="nav__actions nav__action--disable">

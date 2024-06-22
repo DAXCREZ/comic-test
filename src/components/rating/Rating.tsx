@@ -5,7 +5,7 @@ import './rating.scss'
 
 interface RatingProps {
   rating: number
-  setRating: Dispatch<SetStateAction<number>>
+  setRating: (newRating: number) => void
 }
 
 export function Rating({ rating, setRating }: RatingProps) {

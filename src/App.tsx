@@ -1,7 +1,12 @@
+import { RatingProvider } from './context/ComicProvider'
 import './index.scss'
 import { Comic } from './page/comic/comic'
 function App() {
-  return <Comic />
+  return (
+    <RatingProvider>
+      <Comic />
+    </RatingProvider>
+  )
 }
 
 export default App
