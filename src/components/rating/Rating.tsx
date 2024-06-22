@@ -1,6 +1,7 @@
-import { useState, type Dispatch, type SetStateAction } from 'react'
+import { useState } from 'react'
 
-import { Start } from './Start'
+import { Star } from './star'
+
 import './rating.scss'
 
 interface RatingProps {
@@ -22,7 +23,7 @@ export function Rating({ rating, setRating }: RatingProps) {
   return (
     <div className="rating">
       {Array.from({ length: 5 }, (_, index) => (
-        <Start
+        <Star
           key={index}
           color={hoverRating !== null ? index < hoverRating : index < rating}
           onClick={() => {

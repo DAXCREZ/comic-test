@@ -1,8 +1,8 @@
 import { type Dispatch, type SetStateAction } from 'react'
 
-import { Rating } from '../../components/rating/Rating'
 import './comic-nav.scss'
-import { Button } from '../../components/button/Button'
+import { Rating } from '../../components/rating/rating'
+import { Button } from '../../components/button/button'
 
 interface ComicNavProps {
   id: number

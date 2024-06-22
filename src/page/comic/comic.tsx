@@ -7,9 +7,9 @@ import { ComicImage } from '../comic-image/comic-image'
 import { ComicNav } from '../comit-nav/comic-nav'
 import './comic.scss'
 import { getRandomNumber } from '../../util/get-random-number'
-import { Button } from '../../components/button/Button'
-import { Rating } from '../../components/rating/Rating'
-import { RatingContext, type RatedComic } from '../../context/ComicProvider'
+import { Button } from '../../components/button/button'
+import { Rating } from '../../components/rating/rating'
+import { RatingContext, type RatedComic } from '../../context/comic-provider'
 
 export function Comic() {
   const [comicState, setComicState] = useState<Comic>({} as Comic)
