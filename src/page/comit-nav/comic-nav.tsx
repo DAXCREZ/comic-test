@@ -1,5 +1,3 @@
-import { type Dispatch, type SetStateAction } from 'react'
-
 import './comic-nav.scss'
 import { Rating } from '../../components/rating/rating'
 import { Button } from '../../components/button/button'

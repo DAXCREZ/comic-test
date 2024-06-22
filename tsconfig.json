@@ -1,11 +1,19 @@
 {
   "compilerOptions": {
+    "types": [
+      "node",
+      "jest",
+      "module"
+    ],
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": [
       "ES2020",
       "DOM",
-      "DOM.Iterable"
+      "DOM.Iterable",
+      "es2015",
+      "es2016",
+      "es2017"
     ],
     "module": "ESNext",
     "skipLibCheck": true,
@@ -14,20 +22,22 @@
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "esModuleInterop": true,
     "noEmit": true,
     "jsx": "react-jsx",
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
   },
   "include": [
     "src",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "jest.config.cjs"
   ],
   "references": [
     {
