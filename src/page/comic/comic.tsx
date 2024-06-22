@@ -19,12 +19,20 @@ export function Comic() {
 
   const handleGetComic = async () => {
     const id = idComic.toString()
-    const response = await getComic(id)
+    const [data, error] = await getComic(id)
 
-    setComicState(response)
-    const rating = ratings.find((rating) => rating.id === response?.num)
+    if (error) {
+      console.log(error)
 
-    setRating(rating ? rating.rating : 0)
+      return
+    }
+
+    if (data) {
+      setComicState(data)
+      const rating = ratings.find((rating) => rating.id === data.num)
+
+      setRating(rating ? rating.rating : 0)
+    }
   }
 
   const handleGetRandomComic = () => {
