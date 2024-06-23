@@ -3,14 +3,17 @@ import type { Comic } from '../../model/comic'
 import { useContext, useEffect, useState } from 'react'
 
 import { getComic } from '../../services/get-comic'
-import { ComicImage } from '../comic-image/comic-image'
-import { ComicNav } from '../comit-nav/comic-nav'
+
+import { ComicNav } from './comit-nav/comic-nav'
+
 import './comic.scss'
 import { getRandomNumber } from '../../util/get-random-number'
 import { Button } from '../../components/button/button'
 import { Rating } from '../../components/rating/rating'
 import { RatingContext } from '../../context/comic-provider'
 import { NotFound } from '../not-found-and-error/not-found-and-error'
+
+import { ComicImage } from './comic-image/comic-image'
 
 export function Comic() {
   const [comicState, setComicState] = useState<Comic>({} as Comic)
