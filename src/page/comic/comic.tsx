@@ -83,7 +83,7 @@ export function Comic() {
             <Rating rating={rating} setRating={handleRateComic} />
           </div>
           <div className="container__actions">
-            <Button data-testid="next-button" title="<" onClick={handleGetPreviousComic} />
+            <Button title="<" onClick={handleGetPreviousComic} />
             <Button title="?" onClick={handleGetRandomComic} />
             <Button title=">" onClick={handleGetNextComic} />
           </div>
