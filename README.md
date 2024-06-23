@@ -1,4 +1,4 @@
-# Proyecto React con Vite
+# Proyecto React con Vite - Comic Test
 
 Este proyecto es una aplicación de React configurada con Vite.
 
