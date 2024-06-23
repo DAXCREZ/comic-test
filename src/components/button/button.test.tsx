@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
-import { Button } from './button'
+import { Button } from './buttons'
 
 test('renders button with correct title', () => {
   const title = 'Click me'

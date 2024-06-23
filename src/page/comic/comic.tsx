@@ -8,8 +8,8 @@ import { ComicNav } from './comit-nav/comic-nav'
 
 import './comic.scss'
 import { getRandomNumber } from '../../util/get-random-number'
-import { Button } from '../../components/button/button'
-import { Rating } from '../../components/rating/rating'
+import { Button } from '../../components/button/buttons'
+import { Rating } from '../../components/rating/ratings'
 import { RatingContext } from '../../context/comic-provider'
 import { NotFound } from '../not-found-and-error/not-found-and-error'
 

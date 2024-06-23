@@ -1,7 +1,7 @@
 import { render, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
-import { Rating } from './rating'
+import { Rating } from './ratings'
 
 test('renders the Rating component', () => {
   const setRating = () => {

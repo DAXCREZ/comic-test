@@ -1,6 +1,6 @@
 import './comic-nav.scss'
-import { Rating } from '../../../components/rating/rating'
-import { Button } from '../../../components/button/button'
+import { Rating } from '../../../components/rating/ratings'
+import { Button } from '../../../components/button/buttons'
 
 interface ComicNavProps {
   id: number
