@@ -21,7 +21,7 @@ export function Rating({ rating, setRating }: RatingProps) {
   }
 
   return (
-    <div className="rating" data-testid="rating-component">
+    <div aria-label="rating" className="rating" data-testid="rating-component" role="group">
       {Array.from({ length: 5 }, (_, index) => (
         <Star
           key={index}

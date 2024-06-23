@@ -8,7 +8,7 @@ interface ComicImageProps {
 export function ComicImage({ image, alt }: ComicImageProps) {
   return (
     <div className="container__image">
-      <img alt={alt} className="container__image__img" src={image} />
+      <img alt={alt} className="container__image__img" data-testid={alt} src={image} />
     </div>
   )
 }

@@ -22,14 +22,11 @@ export function Comic() {
     const [data, error] = await getComic(id)
 
     if (error) {
-      console.error(error)
-
-      return
+      return <div>hola</div>
     }
 
     if (data) {
       setComicState(data)
-      console.log(data)
       const rating = ratings.find((rating) => rating.id === data.num)
 
       setRating(rating ? rating.rating : 0)
@@ -86,7 +83,7 @@ export function Comic() {
             <Rating rating={rating} setRating={handleRateComic} />
           </div>
           <div className="container__actions">
-            <Button title="<" onClick={handleGetPreviousComic} />
+            <Button data-testid="next-button" title="<" onClick={handleGetPreviousComic} />
             <Button title="?" onClick={handleGetRandomComic} />
             <Button title=">" onClick={handleGetNextComic} />
           </div>

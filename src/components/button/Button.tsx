@@ -7,7 +7,7 @@ interface ButtonProps {
 
 export function Button({ title, onClick }: ButtonProps) {
   return (
-    <button className="button__comic" type="button" onClick={onClick}>
+    <button className="button__comic" data-testid="button-action" type="button" onClick={onClick}>
       {title}
     </button>
   )
