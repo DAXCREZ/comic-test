@@ -10,8 +10,6 @@ export const getComic = async (id: string): Promise<[Comic | null, unknown]> => 
   const isNumberId = isNumber(id)
 
   if (!isNumberId) {
-    console.log('Id invalido')
-
     return [null, new Error('Id invalido')]
   }
 
@@ -24,6 +22,6 @@ export const getComic = async (id: string): Promise<[Comic | null, unknown]> => 
 
     return [dataJson, null]
   } catch (error) {
-    return [null, 'Se produjo un error al obtener el comic']
+    return [null, error]
   }
 }

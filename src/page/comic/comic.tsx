@@ -10,7 +10,7 @@ import { getRandomNumber } from '../../util/get-random-number'
 import { Button } from '../../components/button/button'
 import { Rating } from '../../components/rating/rating'
 import { RatingContext } from '../../context/comic-provider'
-import { NotFound } from '../not-found/not-found'
+import { NotFound } from '../not-found-and-error/not-found-and-error'
 
 export function Comic() {
   const [comicState, setComicState] = useState<Comic>({} as Comic)
