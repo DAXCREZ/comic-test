@@ -24,9 +24,9 @@ export function ComicNav({ id, title, rating, handleGetRandomComic, handleGetNex
           </div>
         </div>
         <div className="nav__actions nav__action--disable">
-          <Button title="<" onClick={handleGetPreviousComic} />
-          <Button title="?" onClick={handleGetRandomComic} />
-          <Button title=">" onClick={handleGetNextComic} />
+          <Button title="<" tooltipText="Previous" onClick={handleGetPreviousComic} />
+          <Button title="?" tooltipText="Random" onClick={handleGetRandomComic} />
+          <Button title=">" tooltipText="Next" onClick={handleGetNextComic} />
         </div>
       </div>
     </nav>

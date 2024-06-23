@@ -95,9 +95,9 @@ export function Comic() {
                 <Rating rating={rating} setRating={handleRateComic} />
               </div>
               <div className="container__actions">
-                <Button title="<" onClick={handleGetPreviousComic} />
-                <Button title="?" onClick={handleGetRandomComic} />
-                <Button title=">" onClick={handleGetNextComic} />
+                <Button title="<" tooltipText="Previous" onClick={handleGetPreviousComic} />
+                <Button title="?" tooltipText="Random" onClick={handleGetRandomComic} />
+                <Button title=">" tooltipText="Next" onClick={handleGetNextComic} />
               </div>
             </footer>
           </section>

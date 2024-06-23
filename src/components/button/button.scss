@@ -1,3 +1,14 @@
+.button__wrapper {
+  position: relative;
+  display: inline-block;
+
+  &:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+
 .button__comic {
   background-color: white;
   color: black;
