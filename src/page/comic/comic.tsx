@@ -10,11 +10,14 @@ import { getRandomNumber } from '../../util/get-random-number'
 import { Button } from '../../components/button/button'
 import { Rating } from '../../components/rating/rating'
 import { RatingContext } from '../../context/comic-provider'
+import { NotFound } from '../not-found/not-found'
 
 export function Comic() {
   const [comicState, setComicState] = useState<Comic>({} as Comic)
-  const [idComic, setIdComic] = useState<number>(123)
+  const [idComic, setIdComic] = useState<number>(getRandomNumber())
   const [rating, setRating] = useState<number>(0)
+  const [error, setError] = useState<boolean>(false)
+
   const { rateComic, ratings } = useContext(RatingContext)
 
   const handleGetComic = async () => {
@@ -22,7 +25,9 @@ export function Comic() {
     const [data, error] = await getComic(id)
 
     if (error) {
-      return <div>hola</div>
+      setError(true)
+
+      return
     }
 
     if (data) {
@@ -66,29 +71,35 @@ export function Comic() {
   }
 
   return (
-    <main className="container">
-      <section className="container__section">
-        <ComicNav
-          handleGetNextComic={handleGetNextComic}
-          handleGetPreviousComic={handleGetPreviousComic}
-          handleGetRandomComic={handleGetRandomComic}
-          handleRateComic={handleRateComic}
-          id={comicState.num}
-          rating={rating}
-          title={comicState.safe_title}
-        />
-        <ComicImage alt={comicState.alt} image={comicState.img} />
-        <footer className="container__footer container__footer--disable">
-          <div className="container__actions">
-            <Rating rating={rating} setRating={handleRateComic} />
-          </div>
-          <div className="container__actions">
-            <Button title="<" onClick={handleGetPreviousComic} />
-            <Button title="?" onClick={handleGetRandomComic} />
-            <Button title=">" onClick={handleGetNextComic} />
-          </div>
-        </footer>
-      </section>
-    </main>
+    <>
+      {error ? (
+        <NotFound />
+      ) : (
+        <main className="container">
+          <section className="container__section">
+            <ComicNav
+              handleGetNextComic={handleGetNextComic}
+              handleGetPreviousComic={handleGetPreviousComic}
+              handleGetRandomComic={handleGetRandomComic}
+              handleRateComic={handleRateComic}
+              id={comicState.num}
+              rating={rating}
+              title={comicState.safe_title}
+            />
+            <ComicImage alt={comicState.alt} image={comicState.img} />
+            <footer className="container__footer container__footer--disable">
+              <div className="container__actions">
+                <Rating rating={rating} setRating={handleRateComic} />
+              </div>
+              <div className="container__actions">
+                <Button title="<" onClick={handleGetPreviousComic} />
+                <Button title="?" onClick={handleGetRandomComic} />
+                <Button title=">" onClick={handleGetNextComic} />
+              </div>
+            </footer>
+          </section>
+        </main>
+      )}
+    </>
   )
 }
