@@ -48,6 +48,11 @@ comic-test/
 └── jest.config.js
 
 ```
+## Pruebas
+
+Para ejecutar las pruebas unitarias, ejecuta el siguiente comando:
+
+npm run test par ejecutarlos todos o npm run [el nombre del archivo] para ejecutar una prueba en específico.
 
 ## Tecnologías utilizadas
 
@@ -59,3 +64,4 @@ comic-test/
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 - [fetch](https://developer.mozilla.org/es/docs/Web/API/Fetch_API)
 - [eslint](https://eslint.org/)
+
